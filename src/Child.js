@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './App.css';
+import {TransactionContext} from './transContext';
 
 
 
 
 const Child = () => {
+
+  let transactions = useContext(TransactionContext);
 
         return (
     
@@ -18,21 +21,16 @@ const Child = () => {
             <h3> History </h3>
             <hr/>
             <ul className="trasaction-list">
-                <li>
-                    <span> Cash </span>
-                    <span> +500 </span>
+                {transactions.map((transObj, ind)=>{
+                    return (
+                        <li>
+                    <span>{transObj.desc}</span>
+                    <span> {transObj.amount} </span>
                 </li>
-                
-                <li>
-                    <span> Cash </span>
-                    <span> +500 </span>
-                </li>
-        
-                <li>
-                    <span> Cash </span>
-                    <span> +500 </span>
-                </li>
+                    )
 
+                })}
+                
             </ul>
             <h3> Add New Transaction </h3>
             <hr/>
