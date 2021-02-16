@@ -38,7 +38,7 @@ const Child = () => {
 
     return (
 
-        <div class="container" >
+        <div class="container">
             <h1 className="text-center"> Expense Tracker </h1>
             <h3> Your Balance <br /> {getIncome() + getExpense()} </h3>
             <div className="expense-container">
